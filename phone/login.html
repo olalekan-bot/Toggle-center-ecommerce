@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Toggle Center</title>
+  <link rel="stylesheet" href="styles/auth.css" />
+</head>
+<body>
+  <!-- LOGIN FORM -->
+  <div class="auth-container">
+    <div class="auth-box">
+      <a href="index.html" class="back-home">← Back to Home</a>
+      
+      <div class="auth-header">
+        <h1>Welcome Back</h1>
+        <p>Sign in to your account to continue shopping</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" placeholder="john@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Enter your password" required />
+        </div>
+
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" id="rememberMe" /> Remember me
+          </label>
+          <a href="#" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="auth-btn">Sign In</button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+      </div>
+
+      <div class="auth-divider">
+        <span>or continue with</span>
+      </div>
+
+      <div class="social-login">
+        <button class="social-btn google">Continue with Google</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast"></div>
+
+  <script src="scripts/auth.js"></script>
+</body>
+</html>

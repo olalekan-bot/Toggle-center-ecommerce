@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product View - Toggle Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles/product.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <ul class="sidebar" id="sidebar">
+      <li class="sidebar-top">
+        <button type="button" class="closeBtn" onclick="hideSidebar()" aria-label="Close menu">
+          ✖
+        </button>
+      </li>
+      <li class="nav-menu" id="sidebarNavUser">
+        <a href="login.html" style="display: flex; gap: 10px; align-items: center;">
+          <span id="sidebarNavUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="sidebarNavUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="sidebarNavUserText">Log In</span>
+        </a>
+      </li>
+      <li class="nav-menu"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu"><a href="contact.html" data-page="contact">Contact Us</a></li>
+    </ul>
+
+    <ul class="nav-head">
+      <li><a href="index.html">
+        <h2>Toggle Center</h2>
+      </a></li>
+      <li class="nav-menu hideOnMobile"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu hideOnMobile"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu hideOnMobile"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu hideOnMobile"><a href="contact.html" data-page="contact">Contact Us</a></li>
+      
+      <li class="hideOnMobile" id="navUser">
+        <a href="login.html" style="display: flex; gap: 5px; align-items: center;">
+          <span id="navUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="navUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="navUserText">Log In</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="cart.html" data-page="cart">
+          <img src="Image/shopping_cart_24dp_000000.svg" alt="Cart">
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+      <li class="menu-button" onclick="showSidebar()"><a href="#">
+        <img src="Image/menu.png" alt="">
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- PRODUCT DETAIL -->
+  <div class="product-container">
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs fade-in">
+      <a href="index.html">Home</a> &gt;
+      <a href="shopAll.html">Shop All</a> &gt;
+      <span id="breadcrumbProduct">Product</span>
+    </div>
+
+    <!-- Product Detail -->
+    <div class="product-detail fade-in" id="productDetail">
+      <div class="product-image-section">
+        <img id="productImage" src="" alt="Product Image" />
+      </div>
+
+      <div class="product-info-section">
+        <p class="product-brand" id="productBrand">Brand</p>
+        <h1 id="productName">Product Name</h1>
+        
+        <div class="product-rating" id="productRating">
+          <span class="stars" id="productStars">☆☆☆☆☆</span>
+          <span class="review-count" id="productReviewCount">(0 reviews)</span>
+        </div>
+
+        <p class="product-price" id="productPrice">₦0.00</p>
+        
+        <div class="product-stock" id="productStock">
+          <span class="in-stock"><i class="fas fa-check-circle"></i> In Stock</span>
+        </div>
+
+        <p class="product-description" id="productDescription">
+          Product description goes here.
+        </p>
+
+        <div class="product-specs">
+          <h4><i class="fas fa-info-circle"></i> Specifications</h4>
+          <ul>
+            <li><span>Brand:</span> <span id="specBrand">-</span></li>
+            <li><span>Color:</span> <span id="specColor">-</span></li>
+            <li><span>Collection:</span> <span id="specCollection">-</span></li>
+            <li><span>Category:</span> <span id="specCategory">-</span></li>
+          </ul>
+        </div>
+
+        <div class="product-actions">
+          <div class="quantity-selector">
+            <button class="qty-btn" id="qtyDecrease">−</button>
+            <span class="qty-number" id="qtyNumber">1</span>
+            <button class="qty-btn" id="qtyIncrease">+</button>
+          </div>
+          <button class="add-to-cart-btn" id="addToCartBtn"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+        </div>
+
+        <div class="product-meta">
+          <p><i class="fas fa-barcode"></i> SKU: <span id="productSku">-</span></p>
+          <div class="share-buttons">
+            <span><i class="fas fa-share-alt"></i> Share:</span>
+            <a href="#" id="shareFacebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" id="shareTwitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" id="shareWhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS SECTION -->
+    <section class="reviews-section slide-up" id="reviewsSection">
+      <h2>Customer Reviews</h2>
+      <div class="reviews-summary">
+        <div class="average-rating">
+          <span class="big-stars" id="avgStars">☆☆☆☆☆</span>
+          <span class="avg-number" id="avgRating">0.0</span>
+          <span class="total-reviews" id="totalReviews">(0 reviews)</span>
+        </div>
+        <button class="write-review-btn" id="writeReviewBtn"><i class="fas fa-pen"></i> Write a Review</button>
+      </div>
+
+      <div class="reviews-list" id="reviewsList">
+        <p class="no-reviews">No reviews yet. Be the first to review this product!</p>
+      </div>
+    </section>
+
+    <!-- REVIEW MODAL -->
+    <div id="reviewModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" id="closeReviewModal">&times;</span>
+        <h3 id="reviewProductTitle">Write a Review</h3>
+        <div class="rating-stars" id="ratingStars">
+          <span class="star" data-value="1">☆</span>
+          <span class="star" data-value="2">☆</span>
+          <span class="star" data-value="3">☆</span>
+          <span class="star" data-value="4">☆</span>
+          <span class="star" data-value="5">☆</span>
+        </div>
+        <textarea id="reviewText" placeholder="Write your review here..." rows="4"></textarea>
+        <input type="text" id="reviewName" placeholder="Your name (optional)" />
+        <button id="submitReview"><i class="fas fa-check"></i> Submit Review</button>
+      </div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <section class="related-products slide-up" id="relatedProducts">
+      <h2>You May Also Like</h2>
+      <div class="related-grid" id="relatedGrid">
+        <!-- Related products will be rendered here -->
+      </div>
+    </section>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Toggle Center</h3>
+        <p>Premium smartphones, tablets &amp; accessories.</p>
+        <div class="footer-social">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a> -->
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shopAll.html">Shop All</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-envelope"></i> support@togglecenter.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, CA</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Newsletter</h4>
+        <div class="newsletter-form">
+          <input type="email" id="newsletterEmail" placeholder="Email" />
+          <button type="button" id="newsletterBtn">Subscribe</button>
+        </div>
+        <p id="newsletterMessage" style="font-size: 12px; color: #888; margin-top: 8px;"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Toggle Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/products.js"></script>
+  <script src="scripts/product.js"></script>
+</body>
+</html>

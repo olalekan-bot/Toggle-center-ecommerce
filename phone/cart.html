@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart - Toggle Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles/cart.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <ul class="sidebar" id="sidebar">
+      <li class="sidebar-top">
+        <button type="button" class="closeBtn" onclick="hideSidebar()" aria-label="Close menu">
+          ✖
+        </button>
+      </li>
+      <li class="nav-menu" id="sidebarNavUser">
+        <a href="login.html" style="display: flex; gap: 10px; align-items: center;">
+          <span id="sidebarNavUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="sidebarNavUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="sidebarNavUserText">Log In</span>
+        </a>
+      </li>
+      <li class="nav-menu"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu"><a href="contact.html" data-page="contact">Contact Us</a></li>
+    </ul>
+
+    <ul class="nav-head">
+      <li><a href="index.html">
+        <h2>Toggle Center</h2>
+      </a></li>
+      <li class="nav-menu hideOnMobile"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu hideOnMobile"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu hideOnMobile"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu hideOnMobile"><a href="contact.html" data-page="contact">Contact Us</a></li>
+      
+      <li class="hideOnMobile" id="navUser">
+        <a href="login.html" style="display: flex; gap: 5px; align-items: center;">
+          <span id="navUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="navUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="navUserText">Log In</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="cart.html" data-page="cart">
+          <img src="Image/shopping_cart_24dp_000000.svg" alt="Cart">
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+      <li class="menu-button" onclick="showSidebar()"><a href="#">
+        <img src="Image/menu.png" alt="">
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- CART MAIN CONTENT -->
+  <div class="cart-container">
+    <h1 class="cart-title fade-in">Your Shopping Cart</h1>
+    
+    <!-- Cart Content -->
+    <div class="cart-content">
+      <div class="cart-items fade-in" id="cartItems">
+        <!-- Items will be rendered here -->
+      </div>
+      
+      <!-- Cart Summary -->
+      <div class="cart-summary slide-up" id="cartSummary">
+        <h3>Order Summary</h3>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="subtotal">₦0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span id="shipping">₦0.00</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="total">₦0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn"><i class="fas fa-lock"></i> Proceed to Checkout</button>
+        <button class="continue-shopping" onclick="window.location.href='shopAll.html'">
+          <i class="fas fa-arrow-left"></i> Continue Shopping
+        </button>
+      </div>
+    </div>
+
+    <!-- Empty Cart Message -->
+    <div class="empty-cart fade-in" id="emptyCart">
+      <span class="empty-icon"><i class="fas fa-shopping-cart"></i></span>
+      <h2>Your cart is empty</h2>
+      <p>Looks like you haven't added any items to your cart yet.</p>
+      <button onclick="window.location.href='shopAll.html'"><i class="fas fa-shopping-bag"></i> Start Shopping</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Toggle Center</h3>
+        <p>Premium smartphones, tablets &amp; accessories.</p>
+        <div class="footer-social">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a> -->
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shopAll.html">Shop All</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-envelope"></i> support@togglecenter.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, CA</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Newsletter</h4>
+        <div class="newsletter-form">
+          <input type="email" id="newsletterEmail" placeholder="Email" />
+          <button type="button" id="newsletterBtn">Subscribe</button>
+        </div>
+        <p id="newsletterMessage" style="font-size: 12px; color: #888; margin-top: 8px;"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Toggle Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/products.js"></script>
+  <script src="scripts/cart.js"></script>
+</body>
+</html>

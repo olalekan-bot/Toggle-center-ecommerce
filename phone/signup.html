@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Toggle Center</title>
+  <link rel="stylesheet" href="styles/auth.css" />
+</head>
+<body>
+  <!-- SIGN UP FORM -->
+  <div class="auth-container">
+    <div class="auth-box">
+      <a href="index.html" class="back-home">← Back to Home</a>
+      
+      <div class="auth-header">
+        <h1>Create Account</h1>
+        <p>Join Toggle Center and start shopping</p>
+      </div>
+
+      <form id="signupForm">
+        <div class="form-group">
+          <label for="signupName">Full Name</label>
+          <input type="text" id="signupName" placeholder="John Doe" required />
+        </div>
+
+        <div class="form-group">
+          <label for="signupEmail">Email Address</label>
+          <input type="email" id="signupEmail" placeholder="john@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" placeholder="Min 6 characters" required />
+        </div>
+
+        <div class="form-group">
+          <label for="signupConfirmPassword">Confirm Password</label>
+          <input type="password" id="signupConfirmPassword" placeholder="Confirm your password" required />
+        </div>
+
+        <div class="form-terms">
+          <label>
+            <input type="checkbox" id="termsCheckbox" required /> 
+            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+          </label>
+        </div>
+
+        <button type="submit" class="auth-btn">Create Account</button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Already have an account? <a href="login.html">Sign In</a></p>
+      </div>
+
+      <div class="auth-divider">
+        <span>or continue with</span>
+      </div>
+
+      <div class="social-login">
+        <button class="social-btn google">Continue with Google</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast"></div>
+
+  <script src="scripts/auth.js"></script>
+</body>
+</html>

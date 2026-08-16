@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Toggle Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles/about.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <ul class="sidebar" id="sidebar">
+      <li class="sidebar-top">
+        <button type="button" class="closeBtn" onclick="hideSidebar()" aria-label="Close menu">
+          ✖
+        </button>
+      </li>
+      <li class="nav-menu" id="sidebarNavUser">
+        <a href="login.html" style="display: flex; gap: 10px; align-items: center;">
+          <span id="sidebarNavUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="sidebarNavUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="sidebarNavUserText">Log In</span>
+        </a>
+      </li>
+      <li class="nav-menu"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu"><a href="contact.html" data-page="contact">Contact Us</a></li>
+    </ul>
+
+    <ul class="nav-head">
+      <li><a href="index.html">
+        <h2>Toggle Center</h2>
+      </a></li>
+      <li class="nav-menu hideOnMobile"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu hideOnMobile"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu hideOnMobile"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu hideOnMobile"><a href="contact.html" data-page="contact">Contact Us</a></li>
+      
+      <li class="hideOnMobile" id="navUser">
+        <a href="login.html" style="display: flex; gap: 5px; align-items: center;">
+          <span id="navUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="navUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="navUserText">Log In</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="cart.html" data-page="cart">
+          <img src="Image/shopping_cart_24dp_000000.svg" alt="Cart">
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+      <li class="menu-button" onclick="showSidebar()"><a href="#">
+        <img src="Image/menu.png" alt="">
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- ABOUT CONTENT -->
+  <div class="about-container">
+    <section class="about-hero fade-in">
+      <h1>About Toggle Center</h1>
+      <p>Your trusted destination for premium smartphones, tablets, and accessories.</p>
+    </section>
+
+    <section class="about-content">
+      <div class="about-story slide-left">
+        <h2>Our Story</h2>
+        <p>
+          Toggle Center was founded with a simple mission: to provide high-quality 
+          mobile devices and accessories at affordable prices. We believe that 
+          everyone deserves access to the latest technology without breaking the bank.
+        </p>
+        <p>
+          From our humble beginnings, we've grown into a trusted retailer serving 
+          customers across the country. Our commitment to quality, customer service, 
+          and competitive pricing has made us a go-to destination for tech enthusiasts 
+          and everyday users alike.
+        </p>
+      </div>
+
+      <div class="about-mission slide-right">
+        <h2>Our Mission</h2>
+        <p>
+          To bridge the gap between cutting-edge technology and everyday affordability. 
+          We carefully curate our collection to ensure every product meets our high 
+          standards of quality and performance.
+        </p>
+      </div>
+
+      <div class="about-values fade-in">
+        <h2>What We Stand For</h2>
+        <div class="values-grid">
+          <div class="value-card zoom-in" style="animation-delay: 0.1s;">
+            <span class="value-icon"><i class="fas fa-search"></i></span>
+            <h3>Quality</h3>
+            <p>Every product is thoroughly tested and verified.</p>
+          </div>
+          <div class="value-card zoom-in" style="animation-delay: 0.2s;">
+            <span class="value-icon"><i class="fas fa-handshake"></i></span>
+            <h3>Trust</h3>
+            <p>We build lasting relationships with our customers.</p>
+          </div>
+          <div class="value-card zoom-in" style="animation-delay: 0.3s;">
+            <span class="value-icon"><i class="fas fa-tag"></i></span>
+            <h3>Value</h3>
+            <p>Competitive prices without compromising on quality.</p>
+          </div>
+          <div class="value-card zoom-in" style="animation-delay: 0.4s;">
+            <span class="value-icon"><i class="fas fa-leaf"></i></span>
+            <h3>Sustainability</h3>
+            <p>We promote responsible consumption and recycling.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat scale-in" style="animation-delay: 0.1s;">
+          <span class="stat-number">10,000+</span>
+          <span class="stat-label"><i class="fas fa-user"></i> Happy Customers</span>
+        </div>
+        <div class="stat scale-in" style="animation-delay: 0.2s;">
+          <span class="stat-number">500+</span>
+          <span class="stat-label"><i class="fas fa-box"></i> Products Sold</span>
+        </div>
+        <div class="stat scale-in" style="animation-delay: 0.3s;">
+          <span class="stat-number">4.9★</span>
+          <span class="stat-label"><i class="fas fa-star"></i> Average Rating</span>
+        </div>
+        <div class="stat scale-in" style="animation-delay: 0.4s;">
+          <span class="stat-number">100%</span>
+          <span class="stat-label"><i class="fas fa-smile"></i> Satisfaction</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER WITH ICONS -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Toggle Center</h3>
+        <p>Premium smartphones, tablets &amp; accessories.</p>
+        <div class="footer-social">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a> -->
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shopAll.html">Shop All</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-envelope"></i> support@togglecenter.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, CA</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Newsletter</h4>
+        <div class="newsletter-form">
+          <input type="email" id="newsletterEmail" placeholder="Email" />
+          <button type="button" id="newsletterBtn">Subscribe</button>
+        </div>
+        <p id="newsletterMessage" style="font-size: 12px; color: #888; margin-top: 8px;"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Toggle Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/about.js"></script>
+</body>
+</html>

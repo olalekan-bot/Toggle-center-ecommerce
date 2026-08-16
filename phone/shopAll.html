@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop All - Toggle Center</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles/shopAll.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->
+  <nav>
+    <ul class="sidebar" id="sidebar">
+      <li class="sidebar-top">
+        <button type="button" class="closeBtn" onclick="hideSidebar()" aria-label="Close menu">
+          ✖
+        </button>
+      </li>
+      <li class="nav-menu" id="sidebarNavUser">
+        <a href="login.html" style="display: flex; gap: 10px; align-items: center;">
+          <span id="sidebarNavUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="sidebarNavUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="sidebarNavUserText">Log In</span>
+        </a>
+      </li>
+      <li class="nav-menu"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu"><a href="contact.html" data-page="contact">Contact Us</a></li>
+    </ul>
+
+    <ul class="nav-head">
+      <li><a href="index.html">
+        <h2>Toggle Center</h2>
+      </a></li>
+      <li class="nav-menu hideOnMobile"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu hideOnMobile"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu hideOnMobile"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu hideOnMobile"><a href="contact.html" data-page="contact">Contact Us</a></li>
+      
+      <li class="hideOnMobile" id="navUser">
+        <a href="login.html" style="display: flex; gap: 5px; align-items: center;">
+          <span id="navUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="navUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="navUserText">Log In</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="cart.html" data-page="cart">
+          <img src="Image/shopping_cart_24dp_000000.svg" alt="Cart">
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+      <li class="menu-button" onclick="showSidebar()"><a href="#">
+        <img src="Image/menu.png" alt="">
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <section class="shop-header fade-in">
+      <h1>Shop All</h1>
+      <p class="shop-description">Browse our collection of smartphones, tablets, and accessories.</p>
+      <button class="filter-toggle-mobile" id="filterToggleMobile">
+            <i class="fas fa-sliders-h"></i> Filters
+          </button>
+    </section>
+
+    <section class="main-content">
+      <!-- Filters Sidebar -->
+      <aside class="filters" id="filtersSidebar">
+        <h3>Filter by</h3>
+
+        <!-- Collection -->
+        <div class="filter-item">
+          <button class="filter-toggle">Collection <span class="symbol">+</span></button>
+          <div class="filter-content">
+            <label><input type="checkbox" data-type="collection" value="all"> All</label>
+            <label><input type="checkbox" data-type="collection" value="mobile phones"> Mobile Phones</label>
+            <label><input type="checkbox" data-type="collection" value="pre-owned phones"> Pre-Owned Phones</label>
+            <label><input type="checkbox" data-type="collection" value="tablets"> Tablets</label>
+            <label><input type="checkbox" data-type="collection" value="accessories"> Accessories</label>
+          </div>
+        </div>
+
+        <!-- Price -->
+        <div class="filter-item">
+          <button class="filter-toggle">Price <span class="symbol">+</span></button>
+          <div class="filter-content">
+            <input type="range" id="priceRange" min="0" max="2000000" value="2000000" step="10000">
+            <p class="price-text">Up to <span id="priceValue">₦2,000,000</span></p>
+          </div>
+        </div>
+
+        <!-- Color -->
+        <div class="filter-item">
+          <button class="filter-toggle">Color <span class="symbol">+</span></button>
+          <div class="filter-content">
+            <label><input type="checkbox" data-type="color" value="black"> Black</label>
+            <label><input type="checkbox" data-type="color" value="white"> White</label>
+          </div>
+        </div>
+
+        <!-- Brand -->
+        <div class="filter-item">
+          <button class="filter-toggle">Brand <span class="symbol">+</span></button>
+          <div class="filter-content">
+            <label><input type="checkbox" data-type="brand" value="Apple"> Apple</label>
+            <label><input type="checkbox" data-type="brand" value="samsung"> Samsung</label>
+            <label><input type="checkbox" data-type="brand" value="tecno"> Tecno</label>
+            <label><input type="checkbox" data-type="brand" value="infinix"> Infinix</label>
+          </div>
+        </div>
+
+        <!-- Product Type -->
+        <div class="filter-item">
+          <button class="filter-toggle">Products <span class="symbol">+</span></button>
+          <div class="filter-content">
+            <label><input type="checkbox" data-type="category" value="cables & adapters"> Cables & Adapters</label>
+            <label><input type="checkbox" data-type="category" value="covers & protection"> Covers & Protection</label>
+            <label><input type="checkbox" data-type="category" value="headphones"> Headphones</label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Products -->
+      <section class="products" id="productsContainer"></section>
+    </section>
+  </div>
+
+  <!-- QUICK VIEW MODAL -->
+  <div id="quickViewModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" id="closeQuickViewModal">&times;</span>
+      <img src="" alt="Product Image" id="modal-img">
+      <h3 id="modal-title"></h3>
+      <p id="modal-price"></p>
+      <button id="modal-add-cart">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Toggle Center</h3>
+        <p>Premium smartphones, tablets &amp; accessories.</p>
+        <div class="footer-social">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <!-- <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a> -->
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shopAll.html">Shop All</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-envelope"></i> support@togglecenter.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, CA</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Newsletter</h4>
+        <div class="newsletter-form">
+          <input type="email" id="newsletterEmail" placeholder="Email" />
+          <button type="button" id="newsletterBtn">Subscribe</button>
+        </div>
+        <p id="newsletterMessage" style="font-size: 12px; color: #888; margin-top: 8px;"></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Toggle Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="scripts/products.js"></script>
+  <script src="scripts/shopAll.js"></script>
+</body>
+</html>

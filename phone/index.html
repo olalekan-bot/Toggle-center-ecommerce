@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toggle Center - Premium Smartphones & Accessories</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <!-- NAVIGATION -->  
+  <nav>
+    <ul class="sidebar" id="sidebar">
+      <li class="sidebar-top">
+        <button type="button" class="closeBtn" onclick="hideSidebar()" aria-label="Close menu">
+          ✖
+        </button>
+      </li>
+      <!-- SIDEBAR LOGIN -->
+      <li class="nav-menu" id="sidebarNavUser">
+        <a href="login.html" style="display: flex; gap: 10px; align-items: center;">
+          <span id="sidebarNavUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="sidebarNavUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="sidebarNavUserText">Log In</span>
+        </a>
+      </li>
+      <li class="nav-menu"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu"><a href="contact.html" data-page="contact">Contact Us</a></li>
+    </ul>
+
+    <ul class="nav-head">
+      <li><a href="index.html">
+        <h2>Toggle Center</h2>
+      </a></li>
+      <li class="nav-menu hideOnMobile"><a href="index.html" data-page="home">Home</a></li>
+      <li class="nav-menu hideOnMobile"><a href="shopAll.html" data-page="shop">Shop All</a></li>
+      <li class="nav-menu hideOnMobile"><a href="about.html" data-page="about">About</a></li>
+      <li class="nav-menu hideOnMobile"><a href="contact.html" data-page="contact">Contact Us</a></li>
+      
+      <!-- LOGIN -->
+      <li class="hideOnMobile" id="navUser">
+        <a href="login.html" style="display: flex; gap: 5px; align-items: center;">
+          <span id="navUserIcon" style="display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; font-size: 20px; color: #222;">
+            <i class="fas fa-user"></i>
+          </span>
+          <span id="navUserAvatar" style="display: none; align-items: center; justify-content: center; width: 32px; height: 32px; background: #4457e7; color: white; border-radius: 50%; font-size: 16px; font-weight: 600; text-transform: uppercase;"></span>
+          <span id="navUserText">Log In</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="cart.html" data-page="cart">
+          <img src="Image/shopping_cart_24dp_000000.svg" alt="Cart">
+          <span id="cart-count">0</span>
+        </a>
+      </li>
+      <li class="menu-button" onclick="showSidebar()"><a href="#">
+        <img src="Image/menu.png" alt="">
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <!-- CAROUSEL BANNER -->
+    <div class="banner-carousel">
+      <div class="carousel-track">
+        
+        <!-- SLIDE 1 -->
+        <div class="carousel-slide active" style="background-image: url('Image/banner\ 1.jpg');">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <span class="slide-badge">Best Sellers</span>
+              <h1>Best Deals on <span>Mobile Phones</span></h1>
+              <p>Latest smartphones from top brands at unbeatable prices.</p>
+              <div class="slide-buttons">
+                <a href="shopAll.html" class="btn-shop">Shop Now →</a>
+                <a href="contact.html" class="btn-chat">Let's Chat!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="carousel-slide" style="background-image: url('Image/banner2.jpg');">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <span class="slide-badge">Limited Offer</span>
+              <h1>Up to <span>50% OFF</span></h1>
+              <p>On tablets and accessories. Don't miss out!</p>
+              <div class="slide-buttons">
+                <a href="shopAll.html" class="btn-shop">View Deals →</a>
+                <a href="about.html" class="btn-chat">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="carousel-slide" style="background-image: url('Image/banner3.jpg');">
+          <div class="slide-overlay"></div>
+          <div class="slide-content">
+            <div class="slide-text">
+              <span class="slide-badge">Accessories Sale</span>
+              <h1>Premium <span>Accessories</span></h1>
+              <p>Cases, chargers, earbuds and more. Quality guaranteed.</p>
+              <div class="slide-buttons">
+                <a href="shopAll.html" class="btn-shop">Shop Now →</a>
+                <a href="contact.html" class="btn-chat">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="carousel-dots">
+        <span class="dot active" data-slide="0"></span>
+        <span class="dot" data-slide="1"></span>
+        <span class="dot" data-slide="2"></span>
+      </div>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <div class="products">
+
+      <!-- Mobile Phones -->
+<section>
+  <div class="mobile-heading">
+    <h1>Most Popular Mobile Phones</h1>
+    <div class="mobile-line"></div>
+  </div>
+
+  <div class="phone-row">
+    <div class="product fade-in" data-id="1" style="cursor: pointer; animation-delay: 0.05s;">
+      <img src="Image/82fcd3_df4a7be03f224cc282d38c8aff689318~mv2_d_1440_1920_s_2.png" alt="iPhone 17 Pro Max" />
+      <h5>iPhone 17 Pro Max</h5>
+      <p class="price">₦1,070,400</p>
+      <button class="add-to-cart" data-name="iPhone 17 Pro Max" data-price="1070400" data-image="Image/82fcd3_df4a7be03f224cc282d38c8aff689318~mv2_d_1440_1920_s_2.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product fade-in" data-id="2" style="cursor: pointer; animation-delay: 0.10s;">
+      <img src="Image/82fcd3_b688bad97950459c93ff6f451ebdd796~mv2_d_1440_1920_s_2.png" alt="Samsung Galaxy S26" />
+      <h5>Samsung Galaxy S26</h5>
+      <p class="price">₦1,070,400</p>
+      <button class="add-to-cart" data-name="Samsung Galaxy S26" data-price="1070400" data-image="Image/82fcd3_b688bad97950459c93ff6f451ebdd796~mv2_d_1440_1920_s_2.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product fade-in" data-id="3" style="cursor: pointer; animation-delay: 0.15s;">
+      <img src="Image/82fcd3_04b4f53e677a4e68b9f99c10575b396b~mv2_d_1440_1920_s_2.png" alt="Tecno Camon 40" />
+      <h5>Tecno Camon 40</h5>
+      <p class="price">₦720,000</p>
+      <button class="add-to-cart" data-name="Tecno Camon 40" data-price="720000" data-image="Image/82fcd3_04b4f53e677a4e68b9f99c10575b396b~mv2_d_1440_1920_s_2.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product best-phone-label fade-in" data-id="4" style="cursor: pointer; animation-delay: 0.20s;">
+      <span>Best Seller</span>
+      <img src="Image/82fcd3_7474ffa9668e47a495b6288c557baa07~mv2_d_1440_1920_s_2.png" alt="Infinix Note 60" />
+      <h5>Infinix Note 60</h5>
+      <p class="price">₦192,000</p>
+      <button class="add-to-cart" data-name="Infinix Note 60" data-price="192000" data-image="Image/82fcd3_7474ffa9668e47a495b6288c557baa07~mv2_d_1440_1920_s_2.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product fade-in" data-id="5" style="cursor: pointer; animation-delay: 0.25s;">
+      <img src="Image/82fcd3_2ce74c274e764f19bfabeb091b3fa956~mv2_d_1440_1920_s_2.png" alt="Google Pixel 8" />
+      <h5>Google Pixel 8</h5>
+      <p class="price">₦958,400</p>
+      <button class="add-to-cart" data-name="Google Pixel 8" data-price="958400" data-image="Image/82fcd3_2ce74c274e764f19bfabeb091b3fa956~mv2_d_1440_1920_s_2.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+  <button class="more-btn" onclick="window.location.href='shopAll.html?category=new mobile phones'">
+    More Mobile Phones →
+  </button>
+</section>
+
+<!-- Tablets -->
+<section>
+  <div class="mobile-heading">
+    <h1>Best Selling Tablets</h1>
+    <div class="mobile-line" style="width: 100%;"></div>
+  </div>
+
+  <div class="phone-row">
+    <div class="product fade-in" data-id="11" style="cursor: pointer; animation-delay: 0.05s;">
+      <img src="Image/tablet5.png" alt="iPad Pro" />
+      <h5>iPad Pro</h5>
+      <p class="price">₦958,400</p>
+      <button class="add-to-cart" data-name="iPad Pro" data-price="958400" data-image="Image/tablet5.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product best-tablet-label fade-in" data-id="12" style="cursor: pointer; animation-delay: 0.10s;">
+      <span class="sale-span">Sale</span>
+      <img src="Image/tablet6.png" alt="Samsung Tab S9" />
+      <h5>Samsung Tab S9</h5>
+      <p class="price"><span style="text-decoration: line-through; color: #999;">₦608,000</span> ₦497,920</p>
+      <button class="add-to-cart" data-name="Samsung Tab S9" data-price="497920" data-image="Image/tablet6.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product fade-in" data-id="13" style="cursor: pointer; animation-delay: 0.15s;">
+      <img src="Image/tablet3.png" alt="Tecno Tablet" />
+      <h5>Tecno Tablet</h5>
+      <p class="price">₦136,000</p>
+      <button class="add-to-cart" data-name="Tecno Tablet" data-price="136000" data-image="Image/tablet3.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product fade-in" data-id="14" style="cursor: pointer; animation-delay: 0.20s;">
+      <img src="Image/tablet2.png" alt="Lenovo Tab" />
+      <h5>Lenovo Tab</h5>
+      <p class="price">₦638,400</p>
+      <button class="add-to-cart" data-name="Lenovo Tab" data-price="638400" data-image="Image/tablet2.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product fade-in" data-id="15" style="cursor: pointer; animation-delay: 0.25s;">
+      <img src="Image/tablet3.png" alt="Huawei MatePad" />
+      <h5>Huawei MatePad</h5>
+      <p class="price">₦398,400</p>
+      <button class="add-to-cart" data-name="Huawei MatePad" data-price="398400" data-image="Image/tablet3.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+  <button class="more-btn" onclick="window.location.href='shopAll.html?category=tablets'">
+    More Tablets →
+  </button>
+</section>
+
+<!-- Accessories -->
+<section>
+  <div class="mobile-heading">
+    <h1>Mobile Accessories</h1>
+    <div class="mobile-line" style="width: 100%;"></div>
+  </div>
+
+  <div class="phone-row">
+    <div class="product fade-in" data-id="19" style="cursor: pointer; animation-delay: 0.05s;">
+      <img src="Image/assessory1.png" alt="USB-C Cable" />
+      <h5>USB-C Cable</h5>
+      <p class="price">₦30,400</p>
+      <button class="add-to-cart" data-name="USB-C Cable" data-price="30400" data-image="Image/assessory1.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product fade-in" data-id="20" style="cursor: pointer; animation-delay: 0.10s;">
+      <img src="Image/case1.png" alt="Phone Case" />
+      <h5>Phone Case</h5>
+      <p class="price">₦24,000</p>
+      <button class="add-to-cart" data-name="Phone Case" data-price="24000" data-image="Image/case1.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product fade-in" data-id="21" style="cursor: pointer; animation-delay: 0.15s;">
+      <img src="Image/assessory4.png" alt="Wireless Earbuds" />
+      <h5>Wireless Earbuds</h5>
+      <p class="price">₦62,400</p>
+      <button class="add-to-cart" data-name="Wireless Earbuds" data-price="62400" data-image="Image/assessory4.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product fade-in" data-id="22" style="cursor: pointer; animation-delay: 0.20s;">
+      <img src="Image/82fcd3_7474ffa9668e47a495b6288c557baa07~mv2_d_1440_1920_s_2.png" alt="Screen Protector" />
+      <h5>Screen Protector</h5>
+      <p class="price">₦46,400</p>
+      <button class="add-to-cart" data-name="Screen Protector" data-price="46400" data-image="Image/82fcd3_7474ffa9668e47a495b6288c557baa07~mv2_d_1440_1920_s_2.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product new-arrival-label fade-in" data-id="23" style="cursor: pointer; animation-delay: 0.25s;">
+      <span>New Arrival</span>
+      <img src="Image/assessory2.png" alt="Power Bank" />
+      <h5>Adapter & Cable</h5>
+      <p class="price">₦30,400</p>
+      <button class="add-to-cart" data-name="Adapter & Cable" data-price="30400" data-image="Image/assessory2.png" data-currency="₦">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+  <button class="more-btn" onclick="window.location.href='shopAll.html?category=accessories'">
+    More Accessories →
+  </button>
+</section>
+    </div>
+  </div>
+
+  <!-- BRANDS SECTION -->
+  <div class="brands-container">
+    <div class="brands-heading">
+      <h1>Our Brands</h1>
+      <div class="brands-line"></div>
+    </div>
+    <div class="brands-grid">
+      <img src="Image/apple.svg" alt="Apple" />
+      <img src="Image/samsung.svg" alt="Samsung" />
+      <img src="Image/Tecno_Mobile_logo.svg" alt="Tecno" />
+      <img src="Image/Infinix_logo.svg" alt="Infinix" />
+      
+    </div>
+  </div>
+
+  <!-- FOOTER WITH SOCIAL ICONS -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Toggle Center</h3>
+        <p>Premium smartphones, tablets &amp; accessories.</p>
+       <div class="footer-social">
+          <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <!-- <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+          </a> -->
+        </div> 
+      </div>
+
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shopAll.html">Shop All</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+          <li><i class="fas fa-envelope"></i> support@togglecenter.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, CA</li>
+          <li><i class="fas fa-clock"></i> Mon-Fri: 9AM - 6PM</li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Newsletter</h4>
+        <div class="newsletter-form">
+          <input type="email" id="newsletterEmail" placeholder="Email" />
+          <button type="button" id="newsletterBtn">Subscribe</button>
+        </div>
+        <p id="newsletterMessage" style="font-size: 12px; color: #888; margin-top: 8px; min-height: 20px;"></p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Toggle Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- TOAST -->
+  <div id="toast"></div>
+
+  <!-- SCRIPTS -->
+  <script src="scripts/products.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
